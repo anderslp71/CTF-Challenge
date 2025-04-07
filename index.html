@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weird Noises</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Weird Noises</h1>
     <div class="audio-grid">
         <div class="audio-item">
             <h3>Alien Noises?</h3>
+            <button class="play-btn">▶️ Play</button>
             <audio>
                 <source src="alien noises.wav">
             </audio>
@@ -18,25 +19,37 @@
         
         <div class="audio-item">
             <h3>Ba Dum Crash</h3>
-            <audio controls>
+            <button class="play-btn">▶️ Play</button>
+            <audio>
                 <source src="Ba Dum Crash.wav">
             </audio>
         </div>
         
         <div class="audio-item">
             <h3>Creaky Door</h3>
-            <audio controls>
+            <button class="play-btn">▶️ Play</button>
+            <audio>
                 <source src="creaky door.mp3">
             </audio>
         </div>
 
         <div class="audio-item">
             <h3>Whip Sound</h3>
-            <audio controls>
+            <button class="play-btn">▶️ Play</button>
+            <audio>
                 <source src="whip sound.mp3">
             </audio>
         </div>
-      
     </div>
+
+    <script>
+        document.querySelectorAll('.play-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const audio = e.target.nextElementSibling;
+                audio.currentTime = 0;
+                audio.play();
+            });
+        });
+    </script>
 </body>
 </html>
