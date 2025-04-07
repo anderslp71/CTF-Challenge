@@ -5,6 +5,11 @@ body {
     margin: 0;
     padding: 20px;
 }
+
+p {
+  text-align: center;
+}
+
 h1 {
     text-align: center;
     color: #ff6f61;
